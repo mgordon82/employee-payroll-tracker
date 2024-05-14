@@ -13,10 +13,10 @@ const collectEmployees = function () {
     // Prompts for the First and Last Names and the Salary
     const firstName = prompt('Enter the employee first name');
     const lastName = prompt('Enter the employee last name');
-    const salary = prompt('Enter employee salary. Enter a number');
+    let salary = prompt('Enter employee salary.', 0);
     if (isNaN(salary)) {
       alert('Salary is not a number');
-      prompt('Enter employee salary. Enter a number');
+      salary = prompt('Enter employee salary.', 0);
     }
 
     if (!firstName) {
@@ -38,6 +38,11 @@ const collectEmployees = function () {
 // Display the average salary
 const displayAverageSalary = function (employeesArray) {
   // TODO: Calculate and display the average salary
+  let avg = 0;
+  for (i = 0; i < employeesArray.length; i++) {
+    avg = avg + employeesArray[i].salary;
+  }
+  console.log('salaries', avg);
 };
 
 // Select a random employee
