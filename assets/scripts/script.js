@@ -13,7 +13,11 @@ const collectEmployees = function () {
     // Prompts for the First and Last Names and the Salary
     const firstName = prompt('Enter the employee first name');
     const lastName = prompt('Enter the employee last name');
-    const salary = prompt('Enter employee salary');
+    const salary = prompt('Enter employee salary. Enter a number');
+    if (isNaN(salary)) {
+      alert('Salary is not a number');
+      prompt('Enter employee salary. Enter a number');
+    }
 
     if (!firstName) {
       return;
