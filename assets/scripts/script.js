@@ -10,19 +10,23 @@ const collectEmployees = function () {
   let addAnotherEmployee = true;
 
   while (addAnotherEmployee) {
-    // Prompts for the First and Last Names and the Salary
+    // Prompts for the First Name and checks to see it is not empty
     const firstName = prompt('Enter the employee first name');
     if (firstName === null) {
       alert('You must enter a first name');
-      return;
+      return employeesArray;
     }
+
+    // Prompts for the Last Name and checks to see if it is not empty
     const lastName = prompt('Enter the employee last name');
     if (lastName === null) {
       alert('You must enter a last name');
-      return;
+      return employeesArray;
     }
+
+    // Prompts for the salary and checks to be sure it is a number
     let salary = prompt('Enter employee salary.', 0);
-    if (isNaN(salary)) {
+    if (isNaN(salary) || null) {
       alert('Salary is not a number');
       salary = prompt('Enter employee salary.', 0);
     }
@@ -57,7 +61,7 @@ const displayAverageSalary = function (employeesArray) {
       })}`
     );
   } else {
-    console.log('There are no employees to show');
+    console.log('There is no employee data to show');
   }
 };
 
